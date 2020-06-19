@@ -1,0 +1,38 @@
+[Desktop Entry]
+Name=Microsoft Word
+Categories=Office;
+Exec=~/.webapps/microsoft-word/microsoft-word
+Icon=microsoft-word
+Path=
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
+
+Actions=in-browser;reinstall;uninstall;
+[Desktop Action reinstall]
+
+Name=Reinstall
+Exec=kdialog --title Reinstall --warningyesno 'Are you sure?' && nativefier-freedesktop ~/.webapps/installers/microsoft-word.webapp
+Icon=view-refresh
+
+Name[it]=Reinstalla
+Exec[it]=kdialog --title Reinstalla --warningyesno 'Sei sicuro?' && nativefier-freedesktop ~/.webapps/installers/microsoft-word.webapp
+
+
+[Desktop Action uninstall]
+
+Name=Uninstall
+Exec=kdialog --title Uninstall --warningyesno 'Are you sure?' && rm -rf ~/.webapps/microsoft-word/ && rm -rf ~/.local/share/applications/microsoft-word.desktop
+Icon=edit-delete
+
+Name[it]=Disinstalla
+Exec[it]=kdialog --title Disinstalla --warningyesno 'Sei sicuro?' && rm -rf ~/.webapps/microsoft-word/ && rm -rf ~/.local/share/applications/microsoft-word.desktop
+
+[Desktop Action in-browser]
+
+Name=Open in the browser
+Exec=xdg-open https://www.office.com/launch/word?auth=1
+Icon=internet-web-browser
+Name[it]=Apri nel browser
+
